@@ -19,14 +19,11 @@ public class MovieService {
     @Autowired
     private MovieDao movieDao;
 
-
-
     public Movie saveMovie(Movie movie) {
         if (movieDao.existsById(movie.getMovieId())) {
             throw new MovieDuplicatedException(String.valueOf(movie.getMovieId()));
         }
-        //return movieDao.save(movie);
-        return movie;
+        return movieDao.save(movie);
     }
 
     public Movie updateMovie(Movie movie) {
