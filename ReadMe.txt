@@ -16,8 +16,11 @@ Make use of spring boot/spring webflux , Maven (if possible).
 Build project using docker and place on your github and/or share the project link with above text into ReadME file.
 
 
-####### Steps to Run-#########
 
-Create Jar - Build Maven Module
-Create Docker Image- docker build -f Dockerfile -t movie-catalog-service .
-Run Docker Image- docker run -p 8080:8080 -d movie-catalog-service
+####### Create Image -#########
+Build Maven Module
+docker build -f Dockerfile -t movie-catalog-service .
+
+########### Docker Registry and command to run ##############
+docker pull priyaverma10oct/movie-catalog-service:latest-2.0
+docker run -p 8080:8080 -d priyaverma10oct/movie-catalog-service:latest-2.0
